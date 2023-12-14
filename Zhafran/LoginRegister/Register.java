@@ -8,11 +8,11 @@ import java.awt.Color;
 
 public class Register implements ActionListener {
     private static JFrame registerFrame;
-    private static JLabel registerTitle, usernameTitle, passwordTitle, toLogin, planeImageSet, cloudImageSet, alert;
+    private static JLabel registerTitle, usernameTitle, passwordTitle, confirmPasswordTitle, toLogin, planeImageSet, cloudImageSet, alert;
     private static JTextField usernameField;
-    private static JPasswordField passwordField;
+    private static JPasswordField passwordField, confirmPasswordField;
     private static JButton registerButton, toLoginButton;
-    private static Font registerFont, usernameFont, passwordFont, loginButtonFont, loginLabelFont, registerButtonFont;
+    private static Font registerFont, usernameFont, passwordFont, confirmPasswordFont, loginButtonFont, loginLabelFont, registerButtonFont;
 
     public static void main(String[] args) {
 
@@ -33,7 +33,7 @@ public class Register implements ActionListener {
 
         // Username Title
         usernameTitle = new JLabel("Username:");
-        usernameTitle.setBounds(50, 150, 100, 45);
+        usernameTitle.setBounds(50, 100, 100, 45);
         usernameFont = new Font("Cambria", Font.PLAIN, 18);
         usernameTitle.setFont(usernameFont);
         usernameTitle.setForeground(Color.BLACK);
@@ -41,24 +41,37 @@ public class Register implements ActionListener {
 
         // Password Title
         passwordTitle = new JLabel("Password:");
-        passwordTitle.setBounds(50, 200, 100, 45);
+        passwordTitle.setBounds(50, 160, 100, 45);
         passwordFont = new Font("Cambria", Font.PLAIN, 18);
         passwordTitle.setFont(passwordFont);
         registerFrame.add(passwordTitle);
 
+        // Confirm Password Title
+        confirmPasswordTitle = new JLabel("Confirm Password:");
+        confirmPasswordTitle.setBounds(50, 220, 150, 45);
+        confirmPasswordFont = new Font ("Cambria", Font.PLAIN, 18);
+        confirmPasswordTitle.setFont(confirmPasswordFont);
+        registerFrame.add(confirmPasswordTitle);
+
         // Username Field
         usernameField = new JTextField();
-        usernameField.setBounds(150, 160, 200, 30);
+        usernameField.setBounds(50, 140, 300, 30);
         registerFrame.add(usernameField);
 
         // Password Field
         passwordField = new JPasswordField();
-        passwordField.setBounds(150, 210, 200, 30);
+        passwordField.setBounds(50, 200, 300, 30);
         registerFrame.add(passwordField);
+
+        // Confirm Password Field
+        confirmPasswordField = new JPasswordField();
+        confirmPasswordField.setBounds(50, 260, 300, 30);
+        registerFrame.add(confirmPasswordField);
+
 
         // Register Button
         registerButton = new JButton("Register");
-        registerButton.setBounds(50, 260, 300, 40);
+        registerButton.setBounds(50, 310, 300, 40);
         registerButtonFont = new Font("Cambria", Font.BOLD, 20);
         registerButton.setFont(registerButtonFont);
         registerButton.setForeground(Color.WHITE);
@@ -68,14 +81,14 @@ public class Register implements ActionListener {
 
         // Login Label
         toLogin = new JLabel("Already Have an Account?");
-        toLogin.setBounds(70, 320, 300, 40);
+        toLogin.setBounds(70, 360, 300, 40);
         loginLabelFont = new Font("Cambria", Font.PLAIN, 14);
         toLogin.setFont(loginLabelFont);
         registerFrame.add(toLogin);
 
         // Login Button
         toLoginButton = new JButton("Login");
-        toLoginButton.setBounds(235, 332, 90, 20);
+        toLoginButton.setBounds(235, 372, 90, 20);
         loginButtonFont = new Font("Cambria", Font.BOLD, 14);
         toLoginButton.setFont(loginButtonFont);
         toLoginButton.setForeground(Color.WHITE);
@@ -110,10 +123,10 @@ public class Register implements ActionListener {
             // lgn.getLoginFrame();
             // JFrame loginFrame = Login.getLoginFrame();
             // if (loginFrame != null) {
-            //     loginFrame.setVisible(true);
+            // loginFrame.setVisible(true);
 
-            }
         }
-
     }
+
+}
 // }
