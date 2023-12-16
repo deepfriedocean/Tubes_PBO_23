@@ -16,7 +16,8 @@ public class LeaderboardPage {
         leaderBoardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Main Leaderboard Panel
-        mainPanel = new JPanel(new FlowLayout());
+        mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBackground(Color.decode("#D2EAEE"));
 
         // Create a scroll pane
@@ -47,14 +48,14 @@ public class LeaderboardPage {
 
         // Loop through players and highScores to create panels
         for (int i = 0; i < players.length; i++) {
-            JPanel playerPanel = new JPanel(new BorderLayout());
+            JPanel playerPanel = new JPanel();
             playerPanel.setBackground(Color.decode("#E8F3F9"));
             Dimension playerPanelSize = new Dimension(380, 75);
             playerPanel.setPreferredSize(playerPanelSize);
 
             JLabel playerInfoLabel = new JLabel("Name: " + players[i] + " | High Score: " + highScores[i]);
             playerInfoLabel.setFont(new Font("Cambria", Font.BOLD, 16));
-            playerPanel.add(playerInfoLabel, BorderLayout.WEST);
+            playerPanel.add(playerInfoLabel);
 
             mainPanel.add(playerPanel);
         }
